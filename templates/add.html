@@ -1,0 +1,18 @@
+{% include "top.html" %}
+    {% import "bootstrap/wtf.html" as wtf %}
+</head>
+<body>
+
+    <style>
+        a {
+            font-size: xx-large;
+        }
+    </style>
+
+    <div class="add_form">
+    {{ wtf.quick_form(form, novalidate=True) }}
+</div>
+
+{% include "bottom.html" %}
+</body>
+</html>

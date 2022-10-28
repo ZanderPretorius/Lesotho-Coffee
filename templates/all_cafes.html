@@ -1,0 +1,116 @@
+{% include "top.html" %}
+
+<section id="cafes">
+
+
+
+    <div class="row">
+        {% for cafe in all_cafes %}
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="cafe-card">
+                <h6 class="cafe-name">{{cafe.name}}</h6>
+
+
+                <table class="top">
+                    <tr>
+                        <td><img class="location-icon" src="static\images\location-icon.png" alt=""></td>
+                        <td>
+                            <p>Coffee Shop</p>
+                        </td>
+                        <td><img class="map-icon" src="https://flagcdn.com/w320/ls.png" alt=""></td>
+                        <td>
+                            <p>{{cafe.city}}, {{cafe.country}}</p>
+                        </td>
+
+                    </tr>
+                </table>
+                <hr>
+                <img class="cafe-card-img" src="{{cafe.image_link}}" alt="">
+                <table class="utility-table">
+
+                    <tr>
+                        {% if cafe.has_wifi %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-wifi.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-wifi.png" alt="" srcset=""></td>
+                        {% endif %}
+                        {% if cafe.has_alcohol %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-alcohol.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-alcohol.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+
+                        {% if cafe.has_mask %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-mask.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-mask.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+                        {% if cafe.has_pets %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-pet.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-pet.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+
+                    </tr>
+                    <tr>
+                        {% if cafe.has_food %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-food.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-food.png" alt="" srcset=""></td>
+                        {% endif %}
+                        {% if cafe.has_toilet %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-toilet.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-toilet.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+
+                        {% if cafe.has_power %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-power.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-power.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+                        {% if cafe.has_calls %}
+                        <td><img class="utilities-icon" src="static\images\icons\yes-call.png" alt="" srcset="">
+                        </td>
+                        {% else: %}
+                        <td><img class="utilities-icon" src="static\images\icons\no-call.png" alt="" srcset="">
+                        </td>
+                        {% endif %}
+
+                    </tr>
+
+
+                </table>
+
+                <table>
+                    <tr> <a class="ccc" href="{{cafe.google_maps_url}}" target="_blank">Click Me!</a>
+                    </tr>
+                    <tr><a class="ccc" href="/view-cafe-by-id-{{cafe.id}}" target="_blank">
+                            View Me!
+                        </a></tr>
+                </table>
+
+            </div>
+        </div>
+        {% endfor %}
+
+
+</section>
+
+{% include "bottom.html" %}
+
+</body>
+
+</html>
