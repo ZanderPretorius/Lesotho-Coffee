@@ -127,10 +127,7 @@ def delete_cafe(cafe_id):
     return(redirect(url_for('view_cafes')))
 
 
-
-# db.create_all()
-# db.session.add(z_cafe)
-# db.session.commit()
+# THIS IS AN EDIT MOOOOOOO! 
 
 if __name__ == '__main__':
    app.run(host="0.0.0.0", debug=True)
