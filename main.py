@@ -10,7 +10,7 @@ from wtforms.validators import DataRequired, URL
 import requests
 from country_flag import FlagFetch
 import json
-from cafe_db_model import ModelledCafe
+
 
 
 app = Flask(__name__)
