@@ -1,6 +1,9 @@
 import requests
 from flask import Flask, render_template, redirect, url_for, request
 
+#  This is for later use while I play around
+# with location pins flags
+
 
 class FlagFetch:
     def __init__(self, requested_country):
@@ -26,19 +29,3 @@ class FlagFetch:
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "fbhsikufgkbwigfuidekd7i6i"
-
-
-# @app.route("/")
-# def fetch():
-
-#     req_country = input("Enter Country: ")
-#     new_country = FlagFetch(req_country)
-#     new_country_cca3 = new_country.get_cca3()
-#     new_country_flag = new_country.get_flag_png()
-
-#     print(new_country_cca3)
-#     print(new_country_flag)
-#     return(f"<img src={new_country_flag}>")
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
